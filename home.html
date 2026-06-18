@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kim Bryan Legada | Web Developer Portfolio</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Portfolio of Kim Bryan Legada, a passionate Web Developer specializing in PHP, MySQL, and modern web technologies.">
+    <meta name="keywords"
+        content="Kim Bryan Legada, Portfolio, Web Developer, PHP, MySQL, CSS, Bootstrap, Tailwind, JavaScript">
+    <meta name="author" content="Kim Bryan Legada">
+
+    <!-- Google Fonts: Outfit for headings, JetBrains Mono for code/tech elements -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Tailwind custom theme — edit colors & fonts here in one place
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Primary neon lime-green accent
+                        limeNeo: {
+                            50:  '#f7fee7',
+                            100: '#ecfccb',
+                            200: '#d9f99d',
+                            300: '#bef264',
+                            400: '#a3e635', // Main accent
+                            500: '#84cc16',
+                            600: '#65a30d',
+                            700: '#4d7c0f',
+                            800: '#3f6212',
+                            900: '#365314',
+                            950: '#152305',
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delay': 'float 6s ease-in-out 2s infinite',
+                        'slide-up': 'slideUp 0.8s ease forwards',
+                        'fade-in': 'fadeIn 1s ease forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        slideUp: {
+                            from: { opacity: 0, transform: 'translateY(30px)' },
+                            to:   { opacity: 1, transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            from: { opacity: 0 },
+                            to:   { opacity: 1 },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS — scoped styles and micro-animations -->
+    <style type="text/tailwindcss">
+        @layer base {
+            /* Dark themed scrollbar that matches the overall aesthetic */
+            ::-webkit-scrollbar { width: 6px; }
+            ::-webkit-scrollbar-track { background: #09090b; }
+            ::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 3px; }
+            ::-webkit-scrollbar-thumb:hover { background: #a3e635; }
+
+            body {
+                @apply bg-zinc-950 text-zinc-100 font-sans antialiased overflow-x-hidden selection:bg-limeNeo-400 selection:text-zinc-950;
+            }
+        }
+
+        /* ── Tech blueprint grid background ── */
+        .tech-grid {
+            background-image:
+                linear-gradient(to right, rgba(163,230,53,0.025) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(163,230,53,0.025) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        /* ── Neon text glow ── */
+        .neon-glow-text {
+            text-shadow: 0 0 20px rgba(163,230,53,0.45), 0 0 40px rgba(163,230,53,0.15);
+        }
+
+        /* ── Pulsing neon ring on profile photo ── */
+        @keyframes pulse-neon {
+            0%, 100% {
+                box-shadow: 0 0 15px rgba(163,230,53,0.35), 0 0 5px rgba(163,230,53,0.1), inset 0 0 5px rgba(163,230,53,0.05);
+                border-color: rgba(163,230,53,0.5);
+            }
+            50% {
+                box-shadow: 0 0 35px rgba(163,230,53,0.75), 0 0 12px rgba(163,230,53,0.4), inset 0 0 10px rgba(163,230,53,0.1);
+                border-color: rgba(163,230,53,1);
+            }
+        }
+        .pulse-neon-border {
+            animation: pulse-neon 3s ease-in-out infinite;
+        }
+
+        /* ── Floating avatar ring decoration ── */
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to   { transform: rotate(360deg); }
+        }
+        .spin-slow  { animation: spin-slow 12s linear infinite; }
+        .spin-slow-rev { animation: spin-slow 18s linear infinite reverse; }
+
+        /* ── Project cards ── */
+        .card-neon-hover {
+            @apply transition-all duration-300 border border-zinc-800/60 bg-zinc-900/30;
+        }
+        .card-neon-hover:hover {
+            border-color: rgba(163,230,53,0.35);
+            background: rgba(24,24,27,0.7);
+            box-shadow: 0 20px 40px -15px rgba(163,230,53,0.15);
+            transform: translateY(-6px);
+        }
+
+        /* ── Gradient line/divider ── */
+        .lime-line {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #a3e635, transparent);
+        }
+
+        /* ── Skill bar fill animation ── */
+        @keyframes fillBar {
+            from { width: 0%; }
+            to   { width: var(--fill); }
+        }
+        .skill-bar-fill {
+            animation: fillBar 1.4s cubic-bezier(0.22,1,0.36,1) forwards;
+        }
+
+        /* ── Hero scroll indicator bounce ── */
+        @keyframes bounce-y {
+            0%, 100% { transform: translateY(0); opacity: 1; }
+            50%       { transform: translateY(8px); opacity: 0.5; }
+        }
+        .scroll-bounce { animation: bounce-y 1.8s ease-in-out infinite; }
+
+        /* ── Section fade-in-up on scroll (JS driven) ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ============================================================
+         SECTION: Navigation Bar
+         PURPOSE: Fixed top nav with transparent glass effect.
+         DEBUGGING: If active links don't highlight, check #id matches.
+    ============================================================ -->
+    <nav id="navbar"
+        class="fixed w-full top-0 z-50 backdrop-blur-xl bg-zinc-950/70 border-b border-zinc-900/80 transition-all duration-500">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+
+            <!-- Logo / Brand -->
+            <a href="#home" class="flex items-center gap-2.5 group">
+                <div class="w-8 h-8 rounded-lg bg-limeNeo-400 flex items-center justify-center text-zinc-950 font-black text-sm font-mono group-hover:scale-110 transition-transform duration-300">
+                    KB
+                </div>
+                <span class="text-white font-bold tracking-wide text-sm hidden sm:block">Kim.Dev</span>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#home"     class="text-zinc-400 hover:text-limeNeo-400 transition-colors duration-300">Home</a>
+                <a href="#projects" class="text-zinc-400 hover:text-limeNeo-400 transition-colors duration-300">Projects</a>
+                <a href="#about"    class="text-zinc-400 hover:text-limeNeo-400 transition-colors duration-300">About</a>
+                <a href="#contact"
+                    class="px-5 py-2 border border-limeNeo-400/40 text-limeNeo-400 hover:bg-limeNeo-400 hover:text-zinc-950 rounded-lg transition-all duration-300 font-semibold hover:shadow-[0_0_20px_rgba(163,230,53,0.3)]">
+                    Contact Me
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn"
+                class="md:hidden text-zinc-400 hover:text-limeNeo-400 focus:outline-none transition-colors p-1"
+                aria-label="Toggle Mobile Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="menu-icon-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-zinc-950/98 backdrop-blur-xl border-b border-zinc-900 px-6 py-5 space-y-4">
+            <a href="#home"     class="block text-zinc-300 hover:text-limeNeo-400 transition-colors py-2 text-base font-medium">Home</a>
+            <a href="#projects" class="block text-zinc-300 hover:text-limeNeo-400 transition-colors py-2 text-base font-medium">Projects</a>
+            <a href="#about"    class="block text-zinc-300 hover:text-limeNeo-400 transition-colors py-2 text-base font-medium">About</a>
+            <a href="#contact"
+                class="block text-center px-4 py-2.5 bg-limeNeo-400 text-zinc-950 rounded-xl font-bold hover:bg-limeNeo-300 transition-colors">
+                Contact Me
+            </a>
+        </div>
+    </nav>
+
+    <!-- ============================================================
+         SECTION: Hero — Home
+         PURPOSE: Two-column layout. Left = intro text & CTAs. Right = profile photo.
+         LAYOUT: lg:grid-cols-2, stacks on mobile.
+    ============================================================ -->
+    <section id="home"
+        class="relative min-h-screen flex items-center tech-grid pt-28 pb-20 overflow-hidden">
+
+        <!-- Background glow blobs -->
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-limeNeo-400/5 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl"></div>
+        </div>
+        <!-- Subtle dark vignette overlay -->
+        <div class="absolute inset-0 bg-gradient-to-b from-zinc-950/10 via-transparent to-zinc-950 pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-6xl mx-auto px-6 w-full">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+                <!-- ── LEFT COLUMN: Text Content ── -->
+                <div class="space-y-8 text-left">
+
+                    <!-- Availability badge -->
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-limeNeo-400/25 bg-limeNeo-950/30 text-xs font-mono text-limeNeo-400 tracking-wider">
+                        <span class="w-2 h-2 rounded-full bg-limeNeo-400 animate-pulse inline-block"></span>
+                        Available for opportunities
+                    </div>
+
+                    <!-- Main heading -->
+                    <div>
+                        <p class="text-zinc-400 font-mono text-sm tracking-widest uppercase mb-3">Hello, I'm</p>
+                        <h1 class="text-5xl sm:text-6xl xl:text-7xl font-black text-white tracking-tight leading-[1.05] mb-4">
+                            Kim Bryan<br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-limeNeo-300 via-limeNeo-400 to-emerald-400 neon-glow-text">
+                                Legada
+                            </span>
+                        </h1>
+                        <!-- Animated role line -->
+                        <div class="flex items-center gap-3">
+                            <div class="h-px w-10 bg-limeNeo-400"></div>
+                            <p class="text-zinc-400 font-medium text-lg">
+                                Web Developer &amp; UI Enthusiast
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <p class="text-zinc-400 text-base sm:text-lg leading-relaxed max-w-lg">
+                        Crafting <span class="text-white font-semibold">highly efficient</span>, user-focused
+                        digital experiences with modern web technologies — from clean backend architecture
+                        to polished front-end interfaces.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#projects"
+                            class="inline-flex items-center justify-center gap-2 bg-limeNeo-400 text-zinc-950 px-7 py-3.5 rounded-xl font-bold hover:bg-limeNeo-300 transition-all duration-300 shadow-[0_4px_25px_rgba(163,230,53,0.25)] hover:shadow-[0_4px_35px_rgba(163,230,53,0.45)] transform hover:-translate-y-0.5">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                            View Projects
+                        </a>
+                        <a href="#contact"
+                            class="inline-flex items-center justify-center gap-2 border border-zinc-700 text-zinc-300 hover:text-white hover:border-limeNeo-400/50 bg-zinc-900/40 hover:bg-zinc-900/80 px-7 py-3.5 rounded-xl font-bold transition-all duration-300 transform hover:-translate-y-0.5">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            Get In Touch
+                        </a>
+                    </div>
+
+                    <!-- Stats Row -->
+                    <div class="grid grid-cols-3 gap-6 pt-6 border-t border-zinc-900/80">
+                        <div>
+                            <h4 class="text-2xl font-black text-limeNeo-400 font-mono">PHP/JS</h4>
+                            <p class="text-xs text-zinc-500 uppercase tracking-widest mt-1">Core Stack</p>
+                        </div>
+                        <div class="border-x border-zinc-900 px-4">
+                            <h4 class="text-2xl font-black text-limeNeo-400 font-mono">100%</h4>
+                            <p class="text-xs text-zinc-500 uppercase tracking-widest mt-1">Responsive</p>
+                        </div>
+                        <div>
+                            <h4 class="text-2xl font-black text-limeNeo-400 font-mono">Clean</h4>
+                            <p class="text-xs text-zinc-500 uppercase tracking-widest mt-1">Architecture</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── RIGHT COLUMN: Profile Photo ── -->
+                <div class="flex items-center justify-center lg:justify-end">
+                    <div class="relative">
+
+                        <!-- Decorative outer spinning ring -->
+                        <div class="absolute inset-0 rounded-full border-2 border-dashed border-limeNeo-400/20 spin-slow" style="margin: -24px;"></div>
+                        <!-- Decorative inner spinning ring reverse -->
+                        <div class="absolute inset-0 rounded-full border border-dotted border-emerald-400/15 spin-slow-rev" style="margin: -48px;"></div>
+
+                        <!-- Glow blob behind image -->
+                        <div class="absolute inset-0 rounded-full bg-limeNeo-400/20 blur-3xl scale-110"></div>
+
+                        <!-- Corner accent dots -->
+                        <div class="absolute -top-3 -right-3 w-5 h-5 rounded-full bg-limeNeo-400 shadow-[0_0_15px_rgba(163,230,53,0.8)]"></div>
+                        <div class="absolute -bottom-3 -left-3 w-3 h-3 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.8)]"></div>
+                        <div class="absolute top-1/2 -right-6 w-2 h-2 rounded-full bg-limeNeo-400/60"></div>
+
+                        <!-- Profile image — large, rounded, neon pulsing border -->
+                        <img src="img/pogi.jpg" alt="Kim Bryan Legada — Profile Photo"
+                            class="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full object-cover border-4 border-limeNeo-400/60 shadow-2xl pulse-neon-border transition-all duration-500 hover:scale-[1.03] z-10">
+
+                        <!-- Name card badge floating below photo -->
+                        <div class="absolute -bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap bg-zinc-900/90 border border-zinc-800 backdrop-blur-md px-5 py-2.5 rounded-xl shadow-xl flex items-center gap-3 z-20">
+                            <div class="w-2.5 h-2.5 rounded-full bg-limeNeo-400 animate-pulse"></div>
+                            <span class="text-xs font-mono text-zinc-300">kimbryanlegada<span class="text-limeNeo-400">.dev</span></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Scroll down indicator -->
+            <div class="text-center mt-24 lg:mt-16 scroll-bounce">
+                <a href="#projects" class="inline-flex flex-col items-center gap-1 text-zinc-600 hover:text-limeNeo-400 transition-colors">
+                    <span class="text-xs font-mono tracking-widest uppercase">Scroll</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION: Projects
+         PURPOSE: Showcase featured works with tech tags.
+         DEBUGGING: Card images live in img/logo/ — check paths if broken.
+    ============================================================ -->
+    <section id="projects" class="py-28 bg-zinc-950 relative border-t border-zinc-900/50">
+
+        <!-- Ambient glow -->
+        <div class="absolute left-0 top-1/3 w-80 h-80 bg-limeNeo-400/4 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute right-0 bottom-1/4 w-64 h-64 bg-emerald-500/4 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+
+            <!-- Section Header -->
+            <div class="text-center mb-20 reveal">
+                <span class="text-xs font-mono tracking-widest text-limeNeo-400 uppercase bg-limeNeo-950/40 border border-limeNeo-400/20 px-4 py-1.5 rounded-full inline-block mb-4">
+                    Recent Works
+                </span>
+                <h2 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
+                    Featured Projects
+                </h2>
+                <div class="lime-line w-32 mx-auto"></div>
+            </div>
+
+            <!-- Project Cards Grid -->
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+                <!-- ── Project Card 1: Campus Ride ── -->
+                <a href="https://campus-ride.rf.gd" target="_blank" rel="noopener noreferrer"
+                    class="reveal group block">
+                    <div class="card-neon-hover rounded-2xl overflow-hidden flex flex-col h-full">
+
+                        <!-- Card Image Area -->
+                        <div class="relative overflow-hidden bg-zinc-950 border-b border-zinc-800/50 flex items-center justify-center" style="height: 200px;">
+                            <!-- Subtle grid bg inside card -->
+                            <div class="absolute inset-0 tech-grid opacity-30 group-hover:opacity-60 transition-opacity duration-500"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-zinc-900/80 via-transparent to-transparent"></div>
+                            <!-- Logo — maximized with object-contain so it's never cropped -->
+                            <img src="img/logo/campus_ride.png" alt="Campus Ride Logo"
+                                class="relative w-full h-full object-contain p-6 z-10 transition-transform duration-500 group-hover:scale-110">
+                            <!-- External link icon -->
+                            <div class="absolute top-3 right-3 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="w-7 h-7 rounded-full bg-limeNeo-400/20 border border-limeNeo-400/40 flex items-center justify-center">
+                                    <svg class="w-3.5 h-3.5 text-limeNeo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card Body -->
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-lg font-bold text-white mb-3 group-hover:text-limeNeo-400 transition-colors duration-300">
+                                Campus Ride
+                            </h3>
+                            <p class="text-sm text-zinc-400 leading-relaxed flex-grow mb-5">
+                                A vehicle registration &amp; monitoring system where students, personnel, and visitors
+                                register their vehicles before entering campus. Includes driver's license monitoring and
+                                real-time entry logs.
+                            </p>
+                            <!-- Tech Tags -->
+                            <div class="flex flex-wrap items-center gap-2 mt-auto">
+                                <span class="font-mono text-xs text-limeNeo-400 bg-limeNeo-950/40 border border-limeNeo-500/25 px-2.5 py-1 rounded-md">PHP</span>
+                                <span class="font-mono text-xs text-limeNeo-400 bg-limeNeo-950/40 border border-limeNeo-500/25 px-2.5 py-1 rounded-md">JavaScript</span>
+                                <span class="font-mono text-xs text-emerald-400 bg-emerald-950/30 border border-emerald-500/25 px-2.5 py-1 rounded-md">MySQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- ── Project Card 2: Automated Pet Feeder ── -->
+                <div class="reveal group block">
+                    <div class="card-neon-hover rounded-2xl overflow-hidden flex flex-col h-full">
+
+                        <div class="relative overflow-hidden bg-zinc-950 border-b border-zinc-800/50 flex items-center justify-center" style="height: 200px;">
+                            <div class="absolute inset-0 tech-grid opacity-30 group-hover:opacity-60 transition-opacity duration-500"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-zinc-900/80 via-transparent to-transparent"></div>
+                            <img src="img/logo/pet-feeder.jpg" alt="Automated Pet Feeder"
+                                class="relative w-full h-full object-contain p-6 z-10 transition-transform duration-500 group-hover:scale-110">
+                        </div>
+
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-lg font-bold text-white mb-3 group-hover:text-limeNeo-400 transition-colors duration-300">
+                                Automated Pet Feeder
+                            </h3>
+                            <p class="text-sm text-zinc-400 leading-relaxed flex-grow mb-5">
+                                A smart IoT pet feeding system powered by ESP32 with a servo motor dispenser.
+                                Controlled via a mobile app with schedule-based automation for hands-free feeding.
+                            </p>
+                            <div class="flex flex-wrap items-center gap-2 mt-auto">
+                                <span class="font-mono text-xs text-sky-400 bg-sky-950/30 border border-sky-500/25 px-2.5 py-1 rounded-md">C++</span>
+                                <span class="font-mono text-xs text-orange-400 bg-orange-950/30 border border-orange-500/25 px-2.5 py-1 rounded-md">ESP32</span>
+                                <span class="font-mono text-xs text-purple-400 bg-purple-950/30 border border-purple-500/25 px-2.5 py-1 rounded-md">IoT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── Project Card 3: Placeholder / Coming Soon ── -->
+                <div class="reveal group block">
+                    <div class="card-neon-hover rounded-2xl overflow-hidden flex flex-col h-full border-dashed !border-zinc-800/40">
+
+                        <div class="relative overflow-hidden bg-zinc-950/50 border-b border-zinc-800/40 flex items-center justify-center" style="height: 200px;">
+                            <div class="absolute inset-0 tech-grid opacity-15"></div>
+                            <div class="text-center z-10">
+                                <div class="w-16 h-16 rounded-2xl border-2 border-dashed border-zinc-700 flex items-center justify-center mx-auto mb-3">
+                                    <svg class="w-7 h-7 text-zinc-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4v16m8-8H4"/>
+                                    </svg>
+                                </div>
+                                <p class="text-xs font-mono text-zinc-600 tracking-widest">COMING SOON</p>
+                            </div>
+                        </div>
+
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-lg font-bold text-zinc-600 mb-3">Next Project</h3>
+                            <p class="text-sm text-zinc-600 leading-relaxed flex-grow mb-5">
+                                A new project is currently in development. Stay tuned for updates!
+                            </p>
+                            <div class="flex items-center gap-2 mt-auto">
+                                <span class="font-mono text-xs text-zinc-700 bg-zinc-900/60 border border-zinc-800 px-2.5 py-1 rounded-md">TBA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION: About Me
+         PURPOSE: Bio, tech stack, and skill proficiency bars.
+    ============================================================ -->
+    <section id="about" class="py-28 relative border-t border-zinc-900/50 overflow-hidden">
+
+        <!-- Background decoration -->
+        <div class="absolute inset-0 tech-grid opacity-30 pointer-events-none"></div>
+        <div class="absolute right-0 top-1/3 w-96 h-96 bg-limeNeo-400/4 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+
+            <!-- Section Header -->
+            <div class="text-center mb-20 reveal">
+                <span class="text-xs font-mono tracking-widest text-limeNeo-400 uppercase bg-limeNeo-950/40 border border-limeNeo-400/20 px-4 py-1.5 rounded-full inline-block mb-4">
+                    Who I Am
+                </span>
+                <h2 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
+                    About Me
+                </h2>
+                <div class="lime-line w-32 mx-auto"></div>
+            </div>
+
+            <!-- Two column layout: Bio left / Skills right -->
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+
+                <!-- Left: Bio & Info Cards -->
+                <div class="space-y-8 reveal">
+                    <div class="bg-zinc-900/40 border border-zinc-800/70 rounded-2xl p-8 backdrop-blur-sm">
+                        <h3 class="text-xl font-bold text-white mb-5 flex items-center gap-2">
+                            <span class="text-limeNeo-400 font-mono">&lt;</span> Bio &amp; Goals <span class="text-limeNeo-400 font-mono">/&gt;</span>
+                        </h3>
+                        <div class="space-y-4 text-zinc-400 text-sm leading-relaxed">
+                            <p>
+                                I'm a passionate web developer focused on building <span class="text-white font-medium">interactive, efficient web applications</span>.
+                                With experience in both server-side and client-side development, I craft codebases
+                                that are clean, performant, and easy to maintain.
+                            </p>
+                            <p>
+                                Skilled in <span class="text-white font-medium">PHP</span> and
+                                <span class="text-white font-medium">MySQL</span> for robust back-end systems,
+                                and modern front-end tools for responsive, polished interfaces. Currently expanding
+                                into advanced JavaScript frameworks and state management architectures.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Quick Info Cards -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-zinc-900/40 border border-zinc-800/70 rounded-xl p-5 hover:border-limeNeo-400/30 transition-colors">
+                            <div class="text-limeNeo-400 mb-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                            </div>
+                            <p class="text-xs font-mono text-zinc-500 uppercase tracking-wider">Location</p>
+                            <p class="text-white font-semibold text-sm mt-0.5">Philippines 🇵🇭</p>
+                        </div>
+                        <div class="bg-zinc-900/40 border border-zinc-800/70 rounded-xl p-5 hover:border-limeNeo-400/30 transition-colors">
+                            <div class="text-limeNeo-400 mb-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <p class="text-xs font-mono text-zinc-500 uppercase tracking-wider">Status</p>
+                            <p class="text-limeNeo-400 font-semibold text-sm mt-0.5">Open to Work</p>
+                        </div>
+                        <div class="bg-zinc-900/40 border border-zinc-800/70 rounded-xl p-5 hover:border-limeNeo-400/30 transition-colors">
+                            <div class="text-limeNeo-400 mb-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <p class="text-xs font-mono text-zinc-500 uppercase tracking-wider">Email</p>
+                            <a href="mailto:kimbryanlegada@gmail.com" class="text-white font-semibold text-sm mt-0.5 hover:text-limeNeo-400 transition-colors block truncate">kimbryanlegada@gmail.com</a>
+                        </div>
+                        <div class="bg-zinc-900/40 border border-zinc-800/70 rounded-xl p-5 hover:border-limeNeo-400/30 transition-colors">
+                            <div class="text-limeNeo-400 mb-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                                </svg>
+                            </div>
+                            <p class="text-xs font-mono text-zinc-500 uppercase tracking-wider">Focus</p>
+                            <p class="text-white font-semibold text-sm mt-0.5">Full-Stack Dev</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Tech Stack + Skill Bars -->
+                <div class="space-y-8 reveal">
+
+                    <!-- Tech Stack Tags -->
+                    <div class="bg-zinc-900/40 border border-zinc-800/70 rounded-2xl p-8 backdrop-blur-sm">
+                        <h3 class="text-xl font-bold text-white mb-5 flex items-center gap-2">
+                            <span class="text-limeNeo-400 font-mono">&lt;</span> Tech Stack <span class="text-limeNeo-400 font-mono">/&gt;</span>
+                        </h3>
+                        <div class="flex flex-wrap gap-2.5">
+                            <span class="font-mono text-xs font-semibold px-3.5 py-2 bg-zinc-950/80 border border-zinc-700 text-zinc-300 rounded-lg hover:border-limeNeo-400/50 hover:text-limeNeo-400 transition-all cursor-default">PHP</span>
+                            <span class="font-mono text-xs font-semibold px-3.5 py-2 bg-zinc-950/80 border border-zinc-700 text-zinc-300 rounded-lg hover:border-limeNeo-400/50 hover:text-limeNeo-400 transition-all cursor-default">MySQL</span>
+                            <span class="font-mono text-xs font-semibold px-3.5 py-2 bg-zinc-950/80 border border-zinc-700 text-zinc-300 rounded-lg hover:border-limeNeo-400/50 hover:text-limeNeo-400 transition-all cursor-default">HTML5</span>
+                            <span class="font-mono text-xs font-semibold px-3.5 py-2 bg-zinc-950/80 border border-zinc-700 text-zinc-300 rounded-lg hover:border-limeNeo-400/50 hover:text-limeNeo-400 transition-all cursor-default">CSS3</span>
+                            <span class="font-mono text-xs font-semibold px-3.5 py-2 bg-zinc-950/80 border border-zinc-700 text-zinc-300 rounded-lg hover:border-limeNeo-400/50 hover:text-limeNeo-400 transition-all cursor-default">JavaScript</span>
+                            <span class="font-mono text-xs font-semibold px-3.5 py-2 bg-zinc-950/80 border border-zinc-700 text-zinc-300 rounded-lg hover:border-limeNeo-400/50 hover:text-limeNeo-400 transition-all cursor-default">Bootstrap</span>
+                            <span class="font-mono text-xs font-semibold px-3.5 py-2 bg-limeNeo-950/30 border border-limeNeo-400/30 text-limeNeo-400 rounded-lg hover:border-limeNeo-400/70 transition-all cursor-default">Tailwind CSS</span>
+                            <span class="font-mono text-xs font-semibold px-3.5 py-2 bg-zinc-950/80 border border-zinc-700 text-zinc-300 rounded-lg hover:border-limeNeo-400/50 hover:text-limeNeo-400 transition-all cursor-default">Git</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill Proficiency Bars -->
+                    <div class="bg-zinc-900/40 border border-zinc-800/70 rounded-2xl p-8 backdrop-blur-sm">
+                        <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                            <span class="text-limeNeo-400 font-mono">&lt;</span> Proficiency <span class="text-limeNeo-400 font-mono">/&gt;</span>
+                        </h3>
+
+                        <!-- DEBUGGING NOTE: skill-bar-fill uses CSS var --fill for animation width -->
+                        <div class="space-y-5" id="skills-container">
+                            <!-- Skill: PHP -->
+                            <div>
+                                <div class="flex justify-between text-xs font-mono mb-2">
+                                    <span class="text-zinc-300">PHP</span>
+                                    <span class="text-limeNeo-400">85%</span>
+                                </div>
+                                <div class="h-2 bg-zinc-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-limeNeo-400 to-emerald-400 rounded-full skill-bar-fill" style="--fill: 85%; width: 0%"></div>
+                                </div>
+                            </div>
+                            <!-- Skill: MySQL -->
+                            <div>
+                                <div class="flex justify-between text-xs font-mono mb-2">
+                                    <span class="text-zinc-300">MySQL</span>
+                                    <span class="text-limeNeo-400">80%</span>
+                                </div>
+                                <div class="h-2 bg-zinc-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-limeNeo-400 to-emerald-400 rounded-full skill-bar-fill" style="--fill: 80%; width: 0%"></div>
+                                </div>
+                            </div>
+                            <!-- Skill: JavaScript -->
+                            <div>
+                                <div class="flex justify-between text-xs font-mono mb-2">
+                                    <span class="text-zinc-300">JavaScript</span>
+                                    <span class="text-limeNeo-400">75%</span>
+                                </div>
+                                <div class="h-2 bg-zinc-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-limeNeo-400 to-emerald-400 rounded-full skill-bar-fill" style="--fill: 75%; width: 0%"></div>
+                                </div>
+                            </div>
+                            <!-- Skill: HTML/CSS -->
+                            <div>
+                                <div class="flex justify-between text-xs font-mono mb-2">
+                                    <span class="text-zinc-300">HTML / CSS</span>
+                                    <span class="text-limeNeo-400">90%</span>
+                                </div>
+                                <div class="h-2 bg-zinc-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-limeNeo-400 to-emerald-400 rounded-full skill-bar-fill" style="--fill: 90%; width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION: Contact
+         PURPOSE: Let visitors reach out via email form.
+         BACKEND: Uses FormSubmit.co AJAX — no server required.
+         DEBUGGING: Check email is activated at formsubmit.co first time.
+    ============================================================ -->
+    <section id="contact" class="py-28 bg-zinc-950 border-t border-zinc-900/50 relative overflow-hidden">
+
+        <div class="absolute left-1/2 top-0 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-limeNeo-400/30 to-transparent"></div>
+        <div class="absolute left-1/4 bottom-1/3 w-80 h-80 bg-limeNeo-400/4 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto px-6 relative z-10">
+
+            <!-- Section Header -->
+            <div class="text-center mb-20 reveal">
+                <span class="text-xs font-mono tracking-widest text-limeNeo-400 uppercase bg-limeNeo-950/40 border border-limeNeo-400/20 px-4 py-1.5 rounded-full inline-block mb-4">
+                    Let's Connect
+                </span>
+                <h2 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
+                    Get In Touch
+                </h2>
+                <div class="lime-line w-32 mx-auto"></div>
+                <p class="text-zinc-500 text-sm mt-6 max-w-md mx-auto leading-relaxed">
+                    Looking for a developer to build something great? I'd love to hear about your project.
+                </p>
+            </div>
+
+            <!-- Contact Grid -->
+            <div class="grid md:grid-cols-5 gap-12 items-start">
+
+                <!-- Left: Contact Info -->
+                <div class="md:col-span-2 space-y-5 reveal">
+                    <h3 class="text-xl font-bold text-white mb-6">Let's talk about<br><span class="text-limeNeo-400">your project</span></h3>
+
+                    <!-- Email Info -->
+                    <div class="flex items-center gap-4 bg-zinc-900/40 border border-zinc-800/70 rounded-xl p-4 hover:border-limeNeo-400/30 transition-all hover:-translate-y-0.5 duration-300">
+                        <div class="w-11 h-11 rounded-xl bg-limeNeo-950/50 border border-limeNeo-500/20 flex items-center justify-center text-limeNeo-400 shrink-0">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="text-xs text-zinc-500 uppercase tracking-wider block font-mono">Email</span>
+                            <a href="mailto:kimbryanlegada@gmail.com"
+                                class="text-sm font-semibold text-white hover:text-limeNeo-400 transition-colors break-all">kimbryanlegada@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <!-- Location Info -->
+                    <div class="flex items-center gap-4 bg-zinc-900/40 border border-zinc-800/70 rounded-xl p-4 hover:border-limeNeo-400/30 transition-all hover:-translate-y-0.5 duration-300">
+                        <div class="w-11 h-11 rounded-xl bg-limeNeo-950/50 border border-limeNeo-500/20 flex items-center justify-center text-limeNeo-400 shrink-0">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="text-xs text-zinc-500 uppercase tracking-wider block font-mono">Location</span>
+                            <span class="text-sm font-semibold text-white">Philippines 🇵🇭</span>
+                        </div>
+                    </div>
+
+                    <!-- Response time note -->
+                    <div class="bg-limeNeo-950/20 border border-limeNeo-400/15 rounded-xl p-4">
+                        <p class="text-xs text-zinc-400 font-mono leading-relaxed">
+                            <span class="text-limeNeo-400">// </span> Usually responds within 24 hours.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right: Contact Form -->
+                <div class="md:col-span-3 reveal">
+                    <div class="bg-zinc-900/40 border border-zinc-800/70 rounded-2xl p-8 backdrop-blur-sm shadow-2xl">
+                        <form id="portfolio-contact-form" class="space-y-5">
+
+                            <!-- Name -->
+                            <div>
+                                <label for="contact-name" class="block text-zinc-400 text-xs font-mono uppercase tracking-widest mb-2">01 / Name</label>
+                                <input type="text" id="contact-name" name="name" required
+                                    class="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-xl text-white placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-limeNeo-400/40 focus:border-limeNeo-400 transition-all duration-300 text-sm"
+                                    placeholder="Your full name">
+                            </div>
+
+                            <!-- Email -->
+                            <div>
+                                <label for="contact-email" class="block text-zinc-400 text-xs font-mono uppercase tracking-widest mb-2">02 / Email</label>
+                                <input type="email" id="contact-email" name="email" required
+                                    class="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-xl text-white placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-limeNeo-400/40 focus:border-limeNeo-400 transition-all duration-300 text-sm"
+                                    placeholder="your@email.com">
+                            </div>
+
+                            <!-- Message -->
+                            <div>
+                                <label for="contact-message" class="block text-zinc-400 text-xs font-mono uppercase tracking-widest mb-2">03 / Message</label>
+                                <textarea id="contact-message" name="message" rows="5" required
+                                    class="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-xl text-white placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-limeNeo-400/40 focus:border-limeNeo-400 transition-all duration-300 resize-none text-sm"
+                                    placeholder="Tell me about your project..."></textarea>
+                            </div>
+
+                            <!-- Status message area (shown after submit) -->
+                            <div id="form-status-msg" class="hidden text-sm font-mono p-4 rounded-xl border"></div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" id="contact-submit-btn"
+                                class="w-full bg-limeNeo-400 text-zinc-950 py-4 rounded-xl font-bold tracking-wide text-sm hover:bg-limeNeo-300 transition-all duration-300 shadow-[0_4px_25px_rgba(163,230,53,0.2)] hover:shadow-[0_4px_35px_rgba(163,230,53,0.4)] flex items-center justify-center gap-2 transform hover:-translate-y-0.5">
+                                <span>Send Message</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION: Footer
+    ============================================================ -->
+    <footer class="bg-zinc-950 border-t border-zinc-900/80 py-10">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-zinc-500 font-mono">
+            <div class="flex items-center gap-2.5">
+                <div class="w-6 h-6 rounded bg-limeNeo-400 flex items-center justify-center text-zinc-950 font-black text-xs">KB</div>
+                <span>&copy; 2026 Kim Bryan Legada. All rights reserved.</span>
+            </div>
+            <p class="flex items-center gap-1.5 text-zinc-600">
+                Built with <span class="text-limeNeo-400">♥</span> using Tailwind CSS
+            </p>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+         SECTION: Application JavaScript
+         PURPOSE: Mobile nav, scroll reveal, skill bars, contact form.
+    ============================================================ -->
+    <script>
+        // ── 1. Mobile Navigation Toggle ──────────────────────────────
+        const mobileMenuBtn  = document.getElementById('mobile-menu-btn');
+        const mobileMenu     = document.getElementById('mobile-menu');
+        const menuIconPath   = document.getElementById('menu-icon-path');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                const isOpen = !mobileMenu.classList.contains('hidden');
+                if (isOpen) {
+                    mobileMenu.classList.add('hidden');
+                    menuIconPath.setAttribute('d', 'M4 6h16M4 12h16M4 18h16'); // Hamburger icon
+                } else {
+                    mobileMenu.classList.remove('hidden');
+                    menuIconPath.setAttribute('d', 'M6 18L18 6M6 6l12 12');    // X close icon
+                }
+            });
+            // Auto-close menu when a nav link is clicked
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuIconPath.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+                });
+            });
+        }
+
+        // ── 2. Scroll Reveal — Intersection Observer ─────────────────
+        // Animates elements with class .reveal when they enter the viewport
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Once visible, stop observing to save resources
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // ── 3. Skill Bars — Animate when About section is visible ────
+        // Bars use CSS custom property --fill to determine target width
+        const skillBarObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
+                        bar.style.animationPlayState = 'running';
+                    });
+                    skillBarObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        const skillsContainer = document.getElementById('skills-container');
+        if (skillsContainer) {
+            // Initially pause animations — they start only on scroll into view
+            skillsContainer.querySelectorAll('.skill-bar-fill').forEach(b => {
+                b.style.animationPlayState = 'paused';
+            });
+            skillBarObserver.observe(skillsContainer);
+        }
+
+        // ── 4. Contact Form — FormSubmit.co AJAX ─────────────────────
+        // DEBUGGING: Open browser console (F12) to see submission payload logs.
+        const contactForm = document.getElementById('portfolio-contact-form');
+        const statusMsg   = document.getElementById('form-status-msg');
+        const submitBtn   = document.getElementById('contact-submit-btn');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent default page reload
+
+                // Collect form field values
+                const name    = document.getElementById('contact-name').value.trim();
+                const email   = document.getElementById('contact-email').value.trim();
+                const message = document.getElementById('contact-message').value.trim();
+
+                // Debug audit in browser console
+                console.group('📬 Form Submission Payload');
+                console.log('Sender:', name, `<${email}>`);
+                console.log('Message:', message);
+                console.groupEnd();
+
+                // Show loading state on button
+                submitBtn.disabled = true;
+                const originalBtnHTML = submitBtn.innerHTML;
+                submitBtn.innerHTML = `
+                    <svg class="animate-spin h-5 w-5 text-zinc-950" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                    </svg>
+                    <span>Sending...</span>
+                `;
+
+                // POST to FormSubmit.co — sends email to kimbryanlegada@gmail.com
+                fetch("https://formsubmit.co/ajax/kimbryanlegada@gmail.com", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
+                    body: JSON.stringify({ name, email, message })
+                })
+                .then(res => {
+                    if (!res.ok) throw new Error("Network error");
+                    return res.json();
+                })
+                .then(() => {
+                    // ✅ Success state
+                    statusMsg.className = 'text-sm font-mono p-4 rounded-xl border border-limeNeo-400/20 bg-limeNeo-950/20 text-limeNeo-400';
+                    statusMsg.textContent = '✅ Message sent! I\'ll get back to you soon. (Check your inbox to activate FormSubmit on first use.)';
+                    contactForm.reset();
+                    setTimeout(() => { statusMsg.className += ' hidden'; }, 7000);
+                })
+                .catch(err => {
+                    // ❌ Error state
+                    console.error('Submission failed:', err);
+                    statusMsg.className = 'text-sm font-mono p-4 rounded-xl border border-red-500/20 bg-red-950/20 text-red-400';
+                    statusMsg.textContent = '❌ Failed to send. Please email me directly at kimbryanlegada@gmail.com';
+                })
+                .finally(() => {
+                    // Restore submit button regardless of outcome
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnHTML;
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>
