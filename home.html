@@ -16,7 +16,8 @@
     <!-- Google Fonts: Outfit for headings, JetBrains Mono for code/tech elements -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
         rel="stylesheet">
 
     <!-- Tailwind CSS CDN -->
@@ -29,7 +30,7 @@
                     colors: {
                         // Primary neon lime-green accent
                         limeNeo: {
-                            50:  '#f7fee7',
+                            50: '#f7fee7',
                             100: '#ecfccb',
                             200: '#d9f99d',
                             300: '#bef264',
@@ -59,11 +60,11 @@
                         },
                         slideUp: {
                             from: { opacity: 0, transform: 'translateY(30px)' },
-                            to:   { opacity: 1, transform: 'translateY(0)' },
+                            to: { opacity: 1, transform: 'translateY(0)' },
                         },
                         fadeIn: {
                             from: { opacity: 0 },
-                            to:   { opacity: 1 },
+                            to: { opacity: 1 },
                         },
                     }
                 }
@@ -180,7 +181,8 @@
 
             <!-- Logo / Brand -->
             <a href="#home" class="flex items-center gap-2.5 group">
-                <div class="w-8 h-8 rounded-lg bg-limeNeo-400 flex items-center justify-center text-zinc-950 font-black text-sm font-mono group-hover:scale-110 transition-transform duration-300">
+                <div
+                    class="w-8 h-8 rounded-lg bg-limeNeo-400 flex items-center justify-center text-zinc-950 font-black text-sm font-mono group-hover:scale-110 transition-transform duration-300">
                     KB
                 </div>
                 <span class="text-white font-bold tracking-wide text-sm hidden sm:block">Kim.Dev</span>
@@ -188,9 +190,10 @@
 
             <!-- Desktop Nav Links -->
             <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-                <a href="#home"     class="text-zinc-400 hover:text-limeNeo-400 transition-colors duration-300">Home</a>
-                <a href="#projects" class="text-zinc-400 hover:text-limeNeo-400 transition-colors duration-300">Projects</a>
-                <a href="#about"    class="text-zinc-400 hover:text-limeNeo-400 transition-colors duration-300">About</a>
+                <a href="#home" class="text-zinc-400 hover:text-limeNeo-400 transition-colors duration-300">Home</a>
+                <a href="#projects"
+                    class="text-zinc-400 hover:text-limeNeo-400 transition-colors duration-300">Projects</a>
+                <a href="#about" class="text-zinc-400 hover:text-limeNeo-400 transition-colors duration-300">About</a>
                 <a href="#contact"
                     class="px-5 py-2 border border-limeNeo-400/40 text-limeNeo-400 hover:bg-limeNeo-400 hover:text-zinc-950 rounded-lg transition-all duration-300 font-semibold hover:shadow-[0_0_20px_rgba(163,230,53,0.3)]">
                     Contact Me
@@ -209,10 +212,14 @@
         </div>
 
         <!-- Mobile Dropdown Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-zinc-950/98 backdrop-blur-xl border-b border-zinc-900 px-6 py-5 space-y-4">
-            <a href="#home"     class="block text-zinc-300 hover:text-limeNeo-400 transition-colors py-2 text-base font-medium">Home</a>
-            <a href="#projects" class="block text-zinc-300 hover:text-limeNeo-400 transition-colors py-2 text-base font-medium">Projects</a>
-            <a href="#about"    class="block text-zinc-300 hover:text-limeNeo-400 transition-colors py-2 text-base font-medium">About</a>
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-zinc-950/98 backdrop-blur-xl border-b border-zinc-900 px-6 py-5 space-y-4">
+            <a href="#home"
+                class="block text-zinc-300 hover:text-limeNeo-400 transition-colors py-2 text-base font-medium">Home</a>
+            <a href="#projects"
+                class="block text-zinc-300 hover:text-limeNeo-400 transition-colors py-2 text-base font-medium">Projects</a>
+            <a href="#about"
+                class="block text-zinc-300 hover:text-limeNeo-400 transition-colors py-2 text-base font-medium">About</a>
             <a href="#contact"
                 class="block text-center px-4 py-2.5 bg-limeNeo-400 text-zinc-950 rounded-xl font-bold hover:bg-limeNeo-300 transition-colors">
                 Contact Me
@@ -225,8 +232,7 @@
          PURPOSE: Two-column layout. Left = intro text & CTAs. Right = profile photo.
          LAYOUT: lg:grid-cols-2, stacks on mobile.
     ============================================================ -->
-    <section id="home"
-        class="relative min-h-screen flex items-center tech-grid pt-28 pb-20 overflow-hidden">
+    <section id="home" class="relative min-h-screen flex items-center tech-grid pt-28 pb-20 overflow-hidden">
 
         <!-- Background glow blobs -->
         <div class="absolute inset-0 pointer-events-none">
@@ -234,7 +240,8 @@
             <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl"></div>
         </div>
         <!-- Subtle dark vignette overlay -->
-        <div class="absolute inset-0 bg-gradient-to-b from-zinc-950/10 via-transparent to-zinc-950 pointer-events-none"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-zinc-950/10 via-transparent to-zinc-950 pointer-events-none">
+        </div>
 
         <div class="relative z-10 max-w-6xl mx-auto px-6 w-full">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
@@ -243,7 +250,8 @@
                 <div class="space-y-8 text-left">
 
                     <!-- Availability badge -->
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-limeNeo-400/25 bg-limeNeo-950/30 text-xs font-mono text-limeNeo-400 tracking-wider">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-limeNeo-400/25 bg-limeNeo-950/30 text-xs font-mono text-limeNeo-400 tracking-wider">
                         <span class="w-2 h-2 rounded-full bg-limeNeo-400 animate-pulse inline-block"></span>
                         Available for opportunities
                     </div>
@@ -251,9 +259,11 @@
                     <!-- Main heading -->
                     <div>
                         <p class="text-zinc-400 font-mono text-sm tracking-widest uppercase mb-3">Hello, I'm</p>
-                        <h1 class="text-5xl sm:text-6xl xl:text-7xl font-black text-white tracking-tight leading-[1.05] mb-4">
+                        <h1
+                            class="text-5xl sm:text-6xl xl:text-7xl font-black text-white tracking-tight leading-[1.05] mb-4">
                             Kim Bryan<br>
-                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-limeNeo-300 via-limeNeo-400 to-emerald-400 neon-glow-text">
+                            <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-limeNeo-300 via-limeNeo-400 to-emerald-400 neon-glow-text">
                                 Legada
                             </span>
                         </h1>
@@ -277,12 +287,18 @@
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="#projects"
                             class="inline-flex items-center justify-center gap-2 bg-limeNeo-400 text-zinc-950 px-7 py-3.5 rounded-xl font-bold hover:bg-limeNeo-300 transition-all duration-300 shadow-[0_4px_25px_rgba(163,230,53,0.25)] hover:shadow-[0_4px_35px_rgba(163,230,53,0.45)] transform hover:-translate-y-0.5">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
                             View Projects
                         </a>
                         <a href="#contact"
                             class="inline-flex items-center justify-center gap-2 border border-zinc-700 text-zinc-300 hover:text-white hover:border-limeNeo-400/50 bg-zinc-900/40 hover:bg-zinc-900/80 px-7 py-3.5 rounded-xl font-bold transition-all duration-300 transform hover:-translate-y-0.5">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
                             Get In Touch
                         </a>
                     </div>
@@ -309,16 +325,22 @@
                     <div class="relative">
 
                         <!-- Decorative outer spinning ring -->
-                        <div class="absolute inset-0 rounded-full border-2 border-dashed border-limeNeo-400/20 spin-slow" style="margin: -24px;"></div>
+                        <div class="absolute inset-0 rounded-full border-2 border-dashed border-limeNeo-400/20 spin-slow"
+                            style="margin: -24px;"></div>
                         <!-- Decorative inner spinning ring reverse -->
-                        <div class="absolute inset-0 rounded-full border border-dotted border-emerald-400/15 spin-slow-rev" style="margin: -48px;"></div>
+                        <div class="absolute inset-0 rounded-full border border-dotted border-emerald-400/15 spin-slow-rev"
+                            style="margin: -48px;"></div>
 
                         <!-- Glow blob behind image -->
                         <div class="absolute inset-0 rounded-full bg-limeNeo-400/20 blur-3xl scale-110"></div>
 
                         <!-- Corner accent dots -->
-                        <div class="absolute -top-3 -right-3 w-5 h-5 rounded-full bg-limeNeo-400 shadow-[0_0_15px_rgba(163,230,53,0.8)]"></div>
-                        <div class="absolute -bottom-3 -left-3 w-3 h-3 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.8)]"></div>
+                        <div
+                            class="absolute -top-3 -right-3 w-5 h-5 rounded-full bg-limeNeo-400 shadow-[0_0_15px_rgba(163,230,53,0.8)]">
+                        </div>
+                        <div
+                            class="absolute -bottom-3 -left-3 w-3 h-3 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.8)]">
+                        </div>
                         <div class="absolute top-1/2 -right-6 w-2 h-2 rounded-full bg-limeNeo-400/60"></div>
 
                         <!-- Profile image — large, rounded, neon pulsing border -->
@@ -326,9 +348,11 @@
                             class="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full object-cover border-4 border-limeNeo-400/60 shadow-2xl pulse-neon-border transition-all duration-500 hover:scale-[1.03] z-10">
 
                         <!-- Name card badge floating below photo -->
-                        <div class="absolute -bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap bg-zinc-900/90 border border-zinc-800 backdrop-blur-md px-5 py-2.5 rounded-xl shadow-xl flex items-center gap-3 z-20">
+                        <div
+                            class="absolute -bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap bg-zinc-900/90 border border-zinc-800 backdrop-blur-md px-5 py-2.5 rounded-xl shadow-xl flex items-center gap-3 z-20">
                             <div class="w-2.5 h-2.5 rounded-full bg-limeNeo-400 animate-pulse"></div>
-                            <span class="text-xs font-mono text-zinc-300">kimbryanlegada<span class="text-limeNeo-400">.dev</span></span>
+                            <span class="text-xs font-mono text-zinc-300">kimbryanlegada<span
+                                    class="text-limeNeo-400">.dev</span></span>
                         </div>
                     </div>
                 </div>
@@ -337,10 +361,11 @@
 
             <!-- Scroll down indicator -->
             <div class="text-center mt-24 lg:mt-16 scroll-bounce">
-                <a href="#projects" class="inline-flex flex-col items-center gap-1 text-zinc-600 hover:text-limeNeo-400 transition-colors">
+                <a href="#projects"
+                    class="inline-flex flex-col items-center gap-1 text-zinc-600 hover:text-limeNeo-400 transition-colors">
                     <span class="text-xs font-mono tracking-widest uppercase">Scroll</span>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                     </svg>
                 </a>
             </div>
@@ -356,13 +381,15 @@
 
         <!-- Ambient glow -->
         <div class="absolute left-0 top-1/3 w-80 h-80 bg-limeNeo-400/4 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute right-0 bottom-1/4 w-64 h-64 bg-emerald-500/4 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute right-0 bottom-1/4 w-64 h-64 bg-emerald-500/4 rounded-full blur-3xl pointer-events-none">
+        </div>
 
         <div class="max-w-6xl mx-auto px-6 relative z-10">
 
             <!-- Section Header -->
             <div class="text-center mb-20 reveal">
-                <span class="text-xs font-mono tracking-widest text-limeNeo-400 uppercase bg-limeNeo-950/40 border border-limeNeo-400/20 px-4 py-1.5 rounded-full inline-block mb-4">
+                <span
+                    class="text-xs font-mono tracking-widest text-limeNeo-400 uppercase bg-limeNeo-950/40 border border-limeNeo-400/20 px-4 py-1.5 rounded-full inline-block mb-4">
                     Recent Works
                 </span>
                 <h2 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
@@ -380,18 +407,27 @@
                     <div class="card-neon-hover rounded-2xl overflow-hidden flex flex-col h-full">
 
                         <!-- Card Image Area -->
-                        <div class="relative overflow-hidden bg-zinc-950 border-b border-zinc-800/50 flex items-center justify-center" style="height: 200px;">
+                        <div class="relative overflow-hidden bg-zinc-950 border-b border-zinc-800/50 flex items-center justify-center"
+                            style="height: 200px;">
                             <!-- Subtle grid bg inside card -->
-                            <div class="absolute inset-0 tech-grid opacity-30 group-hover:opacity-60 transition-opacity duration-500"></div>
-                            <div class="absolute inset-0 bg-gradient-to-t from-zinc-900/80 via-transparent to-transparent"></div>
+                            <div
+                                class="absolute inset-0 tech-grid opacity-30 group-hover:opacity-60 transition-opacity duration-500">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-zinc-900/80 via-transparent to-transparent">
+                            </div>
                             <!-- Logo — maximized with object-contain so it's never cropped -->
                             <img src="img/logo/campus_ride.png" alt="Campus Ride Logo"
                                 class="relative w-full h-full object-contain p-6 z-10 transition-transform duration-500 group-hover:scale-110">
                             <!-- External link icon -->
-                            <div class="absolute top-3 right-3 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <div class="w-7 h-7 rounded-full bg-limeNeo-400/20 border border-limeNeo-400/40 flex items-center justify-center">
-                                    <svg class="w-3.5 h-3.5 text-limeNeo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                            <div
+                                class="absolute top-3 right-3 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div
+                                    class="w-7 h-7 rounded-full bg-limeNeo-400/20 border border-limeNeo-400/40 flex items-center justify-center">
+                                    <svg class="w-3.5 h-3.5 text-limeNeo-400" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                                     </svg>
                                 </div>
                             </div>
@@ -399,7 +435,8 @@
 
                         <!-- Card Body -->
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-lg font-bold text-white mb-3 group-hover:text-limeNeo-400 transition-colors duration-300">
+                            <h3
+                                class="text-lg font-bold text-white mb-3 group-hover:text-limeNeo-400 transition-colors duration-300">
                                 Campus Ride
                             </h3>
                             <p class="text-sm text-zinc-400 leading-relaxed flex-grow mb-5">
@@ -409,9 +446,12 @@
                             </p>
                             <!-- Tech Tags -->
                             <div class="flex flex-wrap items-center gap-2 mt-auto">
-                                <span class="font-mono text-xs text-limeNeo-400 bg-limeNeo-950/40 border border-limeNeo-500/25 px-2.5 py-1 rounded-md">PHP</span>
-                                <span class="font-mono text-xs text-limeNeo-400 bg-limeNeo-950/40 border border-limeNeo-500/25 px-2.5 py-1 rounded-md">JavaScript</span>
-                                <span class="font-mono text-xs text-emerald-400 bg-emerald-950/30 border border-emerald-500/25 px-2.5 py-1 rounded-md">MySQL</span>
+                                <span
+                                    class="font-mono text-xs text-limeNeo-400 bg-limeNeo-950/40 border border-limeNeo-500/25 px-2.5 py-1 rounded-md">PHP</span>
+                                <span
+                                    class="font-mono text-xs text-limeNeo-400 bg-limeNeo-950/40 border border-limeNeo-500/25 px-2.5 py-1 rounded-md">JavaScript</span>
+                                <span
+                                    class="font-mono text-xs text-emerald-400 bg-emerald-950/30 border border-emerald-500/25 px-2.5 py-1 rounded-md">MySQL</span>
                             </div>
                         </div>
                     </div>
@@ -421,15 +461,21 @@
                 <div class="reveal group block">
                     <div class="card-neon-hover rounded-2xl overflow-hidden flex flex-col h-full">
 
-                        <div class="relative overflow-hidden bg-zinc-950 border-b border-zinc-800/50 flex items-center justify-center" style="height: 200px;">
-                            <div class="absolute inset-0 tech-grid opacity-30 group-hover:opacity-60 transition-opacity duration-500"></div>
-                            <div class="absolute inset-0 bg-gradient-to-t from-zinc-900/80 via-transparent to-transparent"></div>
+                        <div class="relative overflow-hidden bg-zinc-950 border-b border-zinc-800/50 flex items-center justify-center"
+                            style="height: 200px;">
+                            <div
+                                class="absolute inset-0 tech-grid opacity-30 group-hover:opacity-60 transition-opacity duration-500">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-zinc-900/80 via-transparent to-transparent">
+                            </div>
                             <img src="img/logo/pet-feeder.jpg" alt="Automated Pet Feeder"
                                 class="relative w-full h-full object-contain p-6 z-10 transition-transform duration-500 group-hover:scale-110">
                         </div>
 
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-lg font-bold text-white mb-3 group-hover:text-limeNeo-400 transition-colors duration-300">
+                            <h3
+                                class="text-lg font-bold text-white mb-3 group-hover:text-limeNeo-400 transition-colors duration-300">
                                 Automated Pet Feeder
                             </h3>
                             <p class="text-sm text-zinc-400 leading-relaxed flex-grow mb-5">
@@ -437,9 +483,12 @@
                                 Controlled via a mobile app with schedule-based automation for hands-free feeding.
                             </p>
                             <div class="flex flex-wrap items-center gap-2 mt-auto">
-                                <span class="font-mono text-xs text-sky-400 bg-sky-950/30 border border-sky-500/25 px-2.5 py-1 rounded-md">C++</span>
-                                <span class="font-mono text-xs text-orange-400 bg-orange-950/30 border border-orange-500/25 px-2.5 py-1 rounded-md">ESP32</span>
-                                <span class="font-mono text-xs text-purple-400 bg-purple-950/30 border border-purple-500/25 px-2.5 py-1 rounded-md">IoT</span>
+                                <span
+                                    class="font-mono text-xs text-sky-400 bg-sky-950/30 border border-sky-500/25 px-2.5 py-1 rounded-md">C++</span>
+                                <span
+                                    class="font-mono text-xs text-orange-400 bg-orange-950/30 border border-orange-500/25 px-2.5 py-1 rounded-md">ESP32</span>
+                                <span
+                                    class="font-mono text-xs text-purple-400 bg-purple-950/30 border border-purple-500/25 px-2.5 py-1 rounded-md">IoT</span>
                             </div>
                         </div>
                     </div>
@@ -447,14 +496,19 @@
 
                 <!-- ── Project Card 3: Placeholder / Coming Soon ── -->
                 <div class="reveal group block">
-                    <div class="card-neon-hover rounded-2xl overflow-hidden flex flex-col h-full border-dashed !border-zinc-800/40">
+                    <div
+                        class="card-neon-hover rounded-2xl overflow-hidden flex flex-col h-full border-dashed !border-zinc-800/40">
 
-                        <div class="relative overflow-hidden bg-zinc-950/50 border-b border-zinc-800/40 flex items-center justify-center" style="height: 200px;">
+                        <div class="relative overflow-hidden bg-zinc-950/50 border-b border-zinc-800/40 flex items-center justify-center"
+                            style="height: 200px;">
                             <div class="absolute inset-0 tech-grid opacity-15"></div>
                             <div class="text-center z-10">
-                                <div class="w-16 h-16 rounded-2xl border-2 border-dashed border-zinc-700 flex items-center justify-center mx-auto mb-3">
-                                    <svg class="w-7 h-7 text-zinc-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4v16m8-8H4"/>
+                                <div
+                                    class="w-16 h-16 rounded-2xl border-2 border-dashed border-zinc-700 flex items-center justify-center mx-auto mb-3">
+                                    <svg class="w-7 h-7 text-zinc-600" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                            d="M12 4v16m8-8H4" />
                                     </svg>
                                 </div>
                                 <p class="text-xs font-mono text-zinc-600 tracking-widest">COMING SOON</p>
@@ -467,7 +521,8 @@
                                 A new project is currently in development. Stay tuned for updates!
                             </p>
                             <div class="flex items-center gap-2 mt-auto">
-                                <span class="font-mono text-xs text-zinc-700 bg-zinc-900/60 border border-zinc-800 px-2.5 py-1 rounded-md">TBA</span>
+                                <span
+                                    class="font-mono text-xs text-zinc-700 bg-zinc-900/60 border border-zinc-800 px-2.5 py-1 rounded-md">TBA</span>
                             </div>
                         </div>
                     </div>
@@ -485,13 +540,15 @@
 
         <!-- Background decoration -->
         <div class="absolute inset-0 tech-grid opacity-30 pointer-events-none"></div>
-        <div class="absolute right-0 top-1/3 w-96 h-96 bg-limeNeo-400/4 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute right-0 top-1/3 w-96 h-96 bg-limeNeo-400/4 rounded-full blur-3xl pointer-events-none">
+        </div>
 
         <div class="max-w-6xl mx-auto px-6 relative z-10">
 
             <!-- Section Header -->
             <div class="text-center mb-20 reveal">
-                <span class="text-xs font-mono tracking-widest text-limeNeo-400 uppercase bg-limeNeo-950/40 border border-limeNeo-400/20 px-4 py-1.5 rounded-full inline-block mb-4">
+                <span
+                    class="text-xs font-mono tracking-widest text-limeNeo-400 uppercase bg-limeNeo-950/40 border border-limeNeo-400/20 px-4 py-1.5 rounded-full inline-block mb-4">
                     Who I Am
                 </span>
                 <h2 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
@@ -507,11 +564,13 @@
                 <div class="space-y-8 reveal">
                     <div class="bg-zinc-900/40 border border-zinc-800/70 rounded-2xl p-8 backdrop-blur-sm">
                         <h3 class="text-xl font-bold text-white mb-5 flex items-center gap-2">
-                            <span class="text-limeNeo-400 font-mono">&lt;</span> Bio &amp; Goals <span class="text-limeNeo-400 font-mono">/&gt;</span>
+                            <span class="text-limeNeo-400 font-mono">&lt;</span> Bio &amp; Goals <span
+                                class="text-limeNeo-400 font-mono">/&gt;</span>
                         </h3>
                         <div class="space-y-4 text-zinc-400 text-sm leading-relaxed">
                             <p>
-                                I'm a passionate web developer focused on building <span class="text-white font-medium">interactive, efficient web applications</span>.
+                                I'm a passionate web developer focused on building <span
+                                    class="text-white font-medium">interactive, efficient web applications</span>.
                                 With experience in both server-side and client-side development, I craft codebases
                                 that are clean, performant, and easy to maintain.
                             </p>
@@ -526,37 +585,48 @@
 
                     <!-- Quick Info Cards -->
                     <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-zinc-900/40 border border-zinc-800/70 rounded-xl p-5 hover:border-limeNeo-400/30 transition-colors">
+                        <div
+                            class="bg-zinc-900/40 border border-zinc-800/70 rounded-xl p-5 hover:border-limeNeo-400/30 transition-colors">
                             <div class="text-limeNeo-400 mb-2">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                 </svg>
                             </div>
                             <p class="text-xs font-mono text-zinc-500 uppercase tracking-wider">Location</p>
                             <p class="text-white font-semibold text-sm mt-0.5">Philippines 🇵🇭</p>
                         </div>
-                        <div class="bg-zinc-900/40 border border-zinc-800/70 rounded-xl p-5 hover:border-limeNeo-400/30 transition-colors">
+                        <div
+                            class="bg-zinc-900/40 border border-zinc-800/70 rounded-xl p-5 hover:border-limeNeo-400/30 transition-colors">
                             <div class="text-limeNeo-400 mb-2">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                 </svg>
                             </div>
                             <p class="text-xs font-mono text-zinc-500 uppercase tracking-wider">Status</p>
                             <p class="text-limeNeo-400 font-semibold text-sm mt-0.5">Open to Work</p>
                         </div>
-                        <div class="bg-zinc-900/40 border border-zinc-800/70 rounded-xl p-5 hover:border-limeNeo-400/30 transition-colors">
+                        <div
+                            class="bg-zinc-900/40 border border-zinc-800/70 rounded-xl p-5 hover:border-limeNeo-400/30 transition-colors">
                             <div class="text-limeNeo-400 mb-2">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                 </svg>
                             </div>
                             <p class="text-xs font-mono text-zinc-500 uppercase tracking-wider">Email</p>
-                            <a href="mailto:kimbryanlegada@gmail.com" class="text-white font-semibold text-sm mt-0.5 hover:text-limeNeo-400 transition-colors block truncate">kimbryanlegada@gmail.com</a>
+                            <a href="mailto:kimbryanlegada@gmail.com"
+                                class="text-white font-semibold text-sm mt-0.5 hover:text-limeNeo-400 transition-colors block truncate">kimbryanlegada@gmail.com</a>
                         </div>
-                        <div class="bg-zinc-900/40 border border-zinc-800/70 rounded-xl p-5 hover:border-limeNeo-400/30 transition-colors">
+                        <div
+                            class="bg-zinc-900/40 border border-zinc-800/70 rounded-xl p-5 hover:border-limeNeo-400/30 transition-colors">
                             <div class="text-limeNeo-400 mb-2">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                                 </svg>
                             </div>
                             <p class="text-xs font-mono text-zinc-500 uppercase tracking-wider">Focus</p>
@@ -571,70 +641,30 @@
                     <!-- Tech Stack Tags -->
                     <div class="bg-zinc-900/40 border border-zinc-800/70 rounded-2xl p-8 backdrop-blur-sm">
                         <h3 class="text-xl font-bold text-white mb-5 flex items-center gap-2">
-                            <span class="text-limeNeo-400 font-mono">&lt;</span> Tech Stack <span class="text-limeNeo-400 font-mono">/&gt;</span>
+                            <span class="text-limeNeo-400 font-mono">&lt;</span> Tech Stack <span
+                                class="text-limeNeo-400 font-mono">/&gt;</span>
                         </h3>
                         <div class="flex flex-wrap gap-2.5">
-                            <span class="font-mono text-xs font-semibold px-3.5 py-2 bg-zinc-950/80 border border-zinc-700 text-zinc-300 rounded-lg hover:border-limeNeo-400/50 hover:text-limeNeo-400 transition-all cursor-default">PHP</span>
-                            <span class="font-mono text-xs font-semibold px-3.5 py-2 bg-zinc-950/80 border border-zinc-700 text-zinc-300 rounded-lg hover:border-limeNeo-400/50 hover:text-limeNeo-400 transition-all cursor-default">MySQL</span>
-                            <span class="font-mono text-xs font-semibold px-3.5 py-2 bg-zinc-950/80 border border-zinc-700 text-zinc-300 rounded-lg hover:border-limeNeo-400/50 hover:text-limeNeo-400 transition-all cursor-default">HTML5</span>
-                            <span class="font-mono text-xs font-semibold px-3.5 py-2 bg-zinc-950/80 border border-zinc-700 text-zinc-300 rounded-lg hover:border-limeNeo-400/50 hover:text-limeNeo-400 transition-all cursor-default">CSS3</span>
-                            <span class="font-mono text-xs font-semibold px-3.5 py-2 bg-zinc-950/80 border border-zinc-700 text-zinc-300 rounded-lg hover:border-limeNeo-400/50 hover:text-limeNeo-400 transition-all cursor-default">JavaScript</span>
-                            <span class="font-mono text-xs font-semibold px-3.5 py-2 bg-zinc-950/80 border border-zinc-700 text-zinc-300 rounded-lg hover:border-limeNeo-400/50 hover:text-limeNeo-400 transition-all cursor-default">Bootstrap</span>
-                            <span class="font-mono text-xs font-semibold px-3.5 py-2 bg-limeNeo-950/30 border border-limeNeo-400/30 text-limeNeo-400 rounded-lg hover:border-limeNeo-400/70 transition-all cursor-default">Tailwind CSS</span>
-                            <span class="font-mono text-xs font-semibold px-3.5 py-2 bg-zinc-950/80 border border-zinc-700 text-zinc-300 rounded-lg hover:border-limeNeo-400/50 hover:text-limeNeo-400 transition-all cursor-default">Git</span>
+                            <span
+                                class="font-mono text-xs font-semibold px-3.5 py-2 bg-zinc-950/80 border border-zinc-700 text-zinc-300 rounded-lg hover:border-limeNeo-400/50 hover:text-limeNeo-400 transition-all cursor-default">PHP</span>
+                            <span
+                                class="font-mono text-xs font-semibold px-3.5 py-2 bg-zinc-950/80 border border-zinc-700 text-zinc-300 rounded-lg hover:border-limeNeo-400/50 hover:text-limeNeo-400 transition-all cursor-default">MySQL</span>
+                            <span
+                                class="font-mono text-xs font-semibold px-3.5 py-2 bg-zinc-950/80 border border-zinc-700 text-zinc-300 rounded-lg hover:border-limeNeo-400/50 hover:text-limeNeo-400 transition-all cursor-default">HTML5</span>
+                            <span
+                                class="font-mono text-xs font-semibold px-3.5 py-2 bg-zinc-950/80 border border-zinc-700 text-zinc-300 rounded-lg hover:border-limeNeo-400/50 hover:text-limeNeo-400 transition-all cursor-default">CSS3</span>
+                            <span
+                                class="font-mono text-xs font-semibold px-3.5 py-2 bg-zinc-950/80 border border-zinc-700 text-zinc-300 rounded-lg hover:border-limeNeo-400/50 hover:text-limeNeo-400 transition-all cursor-default">JavaScript</span>
+                            <span
+                                class="font-mono text-xs font-semibold px-3.5 py-2 bg-zinc-950/80 border border-zinc-700 text-zinc-300 rounded-lg hover:border-limeNeo-400/50 hover:text-limeNeo-400 transition-all cursor-default">Bootstrap</span>
+                            <span
+                                class="font-mono text-xs font-semibold px-3.5 py-2 bg-limeNeo-950/30 border border-limeNeo-400/30 text-limeNeo-400 rounded-lg hover:border-limeNeo-400/70 transition-all cursor-default">Tailwind
+                                CSS</span>
+                            <span
+                                class="font-mono text-xs font-semibold px-3.5 py-2 bg-zinc-950/80 border border-zinc-700 text-zinc-300 rounded-lg hover:border-limeNeo-400/50 hover:text-limeNeo-400 transition-all cursor-default">Git</span>
                         </div>
                     </div>
 
-                    <!-- Skill Proficiency Bars -->
-                    <div class="bg-zinc-900/40 border border-zinc-800/70 rounded-2xl p-8 backdrop-blur-sm">
-                        <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                            <span class="text-limeNeo-400 font-mono">&lt;</span> Proficiency <span class="text-limeNeo-400 font-mono">/&gt;</span>
-                        </h3>
-
-                        <!-- DEBUGGING NOTE: skill-bar-fill uses CSS var --fill for animation width -->
-                        <div class="space-y-5" id="skills-container">
-                            <!-- Skill: PHP -->
-                            <div>
-                                <div class="flex justify-between text-xs font-mono mb-2">
-                                    <span class="text-zinc-300">PHP</span>
-                                    <span class="text-limeNeo-400">85%</span>
-                                </div>
-                                <div class="h-2 bg-zinc-800 rounded-full overflow-hidden">
-                                    <div class="h-full bg-gradient-to-r from-limeNeo-400 to-emerald-400 rounded-full skill-bar-fill" style="--fill: 85%; width: 0%"></div>
-                                </div>
-                            </div>
-                            <!-- Skill: MySQL -->
-                            <div>
-                                <div class="flex justify-between text-xs font-mono mb-2">
-                                    <span class="text-zinc-300">MySQL</span>
-                                    <span class="text-limeNeo-400">80%</span>
-                                </div>
-                                <div class="h-2 bg-zinc-800 rounded-full overflow-hidden">
-                                    <div class="h-full bg-gradient-to-r from-limeNeo-400 to-emerald-400 rounded-full skill-bar-fill" style="--fill: 80%; width: 0%"></div>
-                                </div>
-                            </div>
-                            <!-- Skill: JavaScript -->
-                            <div>
-                                <div class="flex justify-between text-xs font-mono mb-2">
-                                    <span class="text-zinc-300">JavaScript</span>
-                                    <span class="text-limeNeo-400">75%</span>
-                                </div>
-                                <div class="h-2 bg-zinc-800 rounded-full overflow-hidden">
-                                    <div class="h-full bg-gradient-to-r from-limeNeo-400 to-emerald-400 rounded-full skill-bar-fill" style="--fill: 75%; width: 0%"></div>
-                                </div>
-                            </div>
-                            <!-- Skill: HTML/CSS -->
-                            <div>
-                                <div class="flex justify-between text-xs font-mono mb-2">
-                                    <span class="text-zinc-300">HTML / CSS</span>
-                                    <span class="text-limeNeo-400">90%</span>
-                                </div>
-                                <div class="h-2 bg-zinc-800 rounded-full overflow-hidden">
-                                    <div class="h-full bg-gradient-to-r from-limeNeo-400 to-emerald-400 rounded-full skill-bar-fill" style="--fill: 90%; width: 0%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
             </div>
@@ -649,14 +679,18 @@
     ============================================================ -->
     <section id="contact" class="py-28 bg-zinc-950 border-t border-zinc-900/50 relative overflow-hidden">
 
-        <div class="absolute left-1/2 top-0 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-limeNeo-400/30 to-transparent"></div>
-        <div class="absolute left-1/4 bottom-1/3 w-80 h-80 bg-limeNeo-400/4 rounded-full blur-3xl pointer-events-none"></div>
+        <div
+            class="absolute left-1/2 top-0 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-limeNeo-400/30 to-transparent">
+        </div>
+        <div class="absolute left-1/4 bottom-1/3 w-80 h-80 bg-limeNeo-400/4 rounded-full blur-3xl pointer-events-none">
+        </div>
 
         <div class="max-w-5xl mx-auto px-6 relative z-10">
 
             <!-- Section Header -->
             <div class="text-center mb-20 reveal">
-                <span class="text-xs font-mono tracking-widest text-limeNeo-400 uppercase bg-limeNeo-950/40 border border-limeNeo-400/20 px-4 py-1.5 rounded-full inline-block mb-4">
+                <span
+                    class="text-xs font-mono tracking-widest text-limeNeo-400 uppercase bg-limeNeo-950/40 border border-limeNeo-400/20 px-4 py-1.5 rounded-full inline-block mb-4">
                     Let's Connect
                 </span>
                 <h2 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
@@ -673,13 +707,17 @@
 
                 <!-- Left: Contact Info -->
                 <div class="md:col-span-2 space-y-5 reveal">
-                    <h3 class="text-xl font-bold text-white mb-6">Let's talk about<br><span class="text-limeNeo-400">your project</span></h3>
+                    <h3 class="text-xl font-bold text-white mb-6">Let's talk about<br><span
+                            class="text-limeNeo-400">your project</span></h3>
 
                     <!-- Email Info -->
-                    <div class="flex items-center gap-4 bg-zinc-900/40 border border-zinc-800/70 rounded-xl p-4 hover:border-limeNeo-400/30 transition-all hover:-translate-y-0.5 duration-300">
-                        <div class="w-11 h-11 rounded-xl bg-limeNeo-950/50 border border-limeNeo-500/20 flex items-center justify-center text-limeNeo-400 shrink-0">
+                    <div
+                        class="flex items-center gap-4 bg-zinc-900/40 border border-zinc-800/70 rounded-xl p-4 hover:border-limeNeo-400/30 transition-all hover:-translate-y-0.5 duration-300">
+                        <div
+                            class="w-11 h-11 rounded-xl bg-limeNeo-950/50 border border-limeNeo-500/20 flex items-center justify-center text-limeNeo-400 shrink-0">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                             </svg>
                         </div>
                         <div>
@@ -690,10 +728,15 @@
                     </div>
 
                     <!-- Location Info -->
-                    <div class="flex items-center gap-4 bg-zinc-900/40 border border-zinc-800/70 rounded-xl p-4 hover:border-limeNeo-400/30 transition-all hover:-translate-y-0.5 duration-300">
-                        <div class="w-11 h-11 rounded-xl bg-limeNeo-950/50 border border-limeNeo-500/20 flex items-center justify-center text-limeNeo-400 shrink-0">
+                    <div
+                        class="flex items-center gap-4 bg-zinc-900/40 border border-zinc-800/70 rounded-xl p-4 hover:border-limeNeo-400/30 transition-all hover:-translate-y-0.5 duration-300">
+                        <div
+                            class="w-11 h-11 rounded-xl bg-limeNeo-950/50 border border-limeNeo-500/20 flex items-center justify-center text-limeNeo-400 shrink-0">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
                         </div>
                         <div>
@@ -717,7 +760,9 @@
 
                             <!-- Name -->
                             <div>
-                                <label for="contact-name" class="block text-zinc-400 text-xs font-mono uppercase tracking-widest mb-2">01 / Name</label>
+                                <label for="contact-name"
+                                    class="block text-zinc-400 text-xs font-mono uppercase tracking-widest mb-2">01 /
+                                    Name</label>
                                 <input type="text" id="contact-name" name="name" required
                                     class="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-xl text-white placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-limeNeo-400/40 focus:border-limeNeo-400 transition-all duration-300 text-sm"
                                     placeholder="Your full name">
@@ -725,7 +770,9 @@
 
                             <!-- Email -->
                             <div>
-                                <label for="contact-email" class="block text-zinc-400 text-xs font-mono uppercase tracking-widest mb-2">02 / Email</label>
+                                <label for="contact-email"
+                                    class="block text-zinc-400 text-xs font-mono uppercase tracking-widest mb-2">02 /
+                                    Email</label>
                                 <input type="email" id="contact-email" name="email" required
                                     class="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-xl text-white placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-limeNeo-400/40 focus:border-limeNeo-400 transition-all duration-300 text-sm"
                                     placeholder="your@email.com">
@@ -733,7 +780,9 @@
 
                             <!-- Message -->
                             <div>
-                                <label for="contact-message" class="block text-zinc-400 text-xs font-mono uppercase tracking-widest mb-2">03 / Message</label>
+                                <label for="contact-message"
+                                    class="block text-zinc-400 text-xs font-mono uppercase tracking-widest mb-2">03 /
+                                    Message</label>
                                 <textarea id="contact-message" name="message" rows="5" required
                                     class="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-xl text-white placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-limeNeo-400/40 focus:border-limeNeo-400 transition-all duration-300 resize-none text-sm"
                                     placeholder="Tell me about your project..."></textarea>
@@ -747,7 +796,8 @@
                                 class="w-full bg-limeNeo-400 text-zinc-950 py-4 rounded-xl font-bold tracking-wide text-sm hover:bg-limeNeo-300 transition-all duration-300 shadow-[0_4px_25px_rgba(163,230,53,0.2)] hover:shadow-[0_4px_35px_rgba(163,230,53,0.4)] flex items-center justify-center gap-2 transform hover:-translate-y-0.5">
                                 <span>Send Message</span>
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                 </svg>
                             </button>
                         </form>
@@ -762,14 +812,15 @@
          SECTION: Footer
     ============================================================ -->
     <footer class="bg-zinc-950 border-t border-zinc-900/80 py-10">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-zinc-500 font-mono">
+        <div
+            class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-zinc-500 font-mono">
             <div class="flex items-center gap-2.5">
-                <div class="w-6 h-6 rounded bg-limeNeo-400 flex items-center justify-center text-zinc-950 font-black text-xs">KB</div>
+                <div
+                    class="w-6 h-6 rounded bg-limeNeo-400 flex items-center justify-center text-zinc-950 font-black text-xs">
+                    KB</div>
                 <span>&copy; 2026 Kim Bryan Legada. All rights reserved.</span>
             </div>
-            <p class="flex items-center gap-1.5 text-zinc-600">
-                Built with <span class="text-limeNeo-400">♥</span> using Tailwind CSS
-            </p>
+
         </div>
     </footer>
 
@@ -779,9 +830,9 @@
     ============================================================ -->
     <script>
         // ── 1. Mobile Navigation Toggle ──────────────────────────────
-        const mobileMenuBtn  = document.getElementById('mobile-menu-btn');
-        const mobileMenu     = document.getElementById('mobile-menu');
-        const menuIconPath   = document.getElementById('menu-icon-path');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIconPath = document.getElementById('menu-icon-path');
 
         if (mobileMenuBtn && mobileMenu) {
             mobileMenuBtn.addEventListener('click', () => {
@@ -842,16 +893,16 @@
         // ── 4. Contact Form — FormSubmit.co AJAX ─────────────────────
         // DEBUGGING: Open browser console (F12) to see submission payload logs.
         const contactForm = document.getElementById('portfolio-contact-form');
-        const statusMsg   = document.getElementById('form-status-msg');
-        const submitBtn   = document.getElementById('contact-submit-btn');
+        const statusMsg = document.getElementById('form-status-msg');
+        const submitBtn = document.getElementById('contact-submit-btn');
 
         if (contactForm) {
             contactForm.addEventListener('submit', function (event) {
                 event.preventDefault(); // Prevent default page reload
 
                 // Collect form field values
-                const name    = document.getElementById('contact-name').value.trim();
-                const email   = document.getElementById('contact-email').value.trim();
+                const name = document.getElementById('contact-name').value.trim();
+                const email = document.getElementById('contact-email').value.trim();
                 const message = document.getElementById('contact-message').value.trim();
 
                 // Debug audit in browser console
@@ -880,28 +931,28 @@
                     },
                     body: JSON.stringify({ name, email, message })
                 })
-                .then(res => {
-                    if (!res.ok) throw new Error("Network error");
-                    return res.json();
-                })
-                .then(() => {
-                    // ✅ Success state
-                    statusMsg.className = 'text-sm font-mono p-4 rounded-xl border border-limeNeo-400/20 bg-limeNeo-950/20 text-limeNeo-400';
-                    statusMsg.textContent = '✅ Message sent! I\'ll get back to you soon. (Check your inbox to activate FormSubmit on first use.)';
-                    contactForm.reset();
-                    setTimeout(() => { statusMsg.className += ' hidden'; }, 7000);
-                })
-                .catch(err => {
-                    // ❌ Error state
-                    console.error('Submission failed:', err);
-                    statusMsg.className = 'text-sm font-mono p-4 rounded-xl border border-red-500/20 bg-red-950/20 text-red-400';
-                    statusMsg.textContent = '❌ Failed to send. Please email me directly at kimbryanlegada@gmail.com';
-                })
-                .finally(() => {
-                    // Restore submit button regardless of outcome
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = originalBtnHTML;
-                });
+                    .then(res => {
+                        if (!res.ok) throw new Error("Network error");
+                        return res.json();
+                    })
+                    .then(() => {
+                        // ✅ Success state
+                        statusMsg.className = 'text-sm font-mono p-4 rounded-xl border border-limeNeo-400/20 bg-limeNeo-950/20 text-limeNeo-400';
+                        statusMsg.textContent = '✅ Message sent! I\'ll get back to you soon. (Check your inbox to activate FormSubmit on first use.)';
+                        contactForm.reset();
+                        setTimeout(() => { statusMsg.className += ' hidden'; }, 7000);
+                    })
+                    .catch(err => {
+                        // ❌ Error state
+                        console.error('Submission failed:', err);
+                        statusMsg.className = 'text-sm font-mono p-4 rounded-xl border border-red-500/20 bg-red-950/20 text-red-400';
+                        statusMsg.textContent = '❌ Failed to send. Please email me directly at kimbryanlegada@gmail.com';
+                    })
+                    .finally(() => {
+                        // Restore submit button regardless of outcome
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalBtnHTML;
+                    });
             });
         }
     </script>
