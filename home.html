@@ -351,25 +351,23 @@
                         <div
                             class="absolute -bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap bg-zinc-900/90 border border-zinc-800 backdrop-blur-md px-5 py-2.5 rounded-xl shadow-xl flex items-center gap-3 z-20">
                             <div class="w-2.5 h-2.5 rounded-full bg-limeNeo-400 animate-pulse"></div>
-                            <span class="text-xs font-mono text-zinc-300">kimbryanlegada<span
-                                    class="text-limeNeo-400">.dev</span></span>
+                            <span class="text-xs font-mono text-zinc-300">Mr. HAPPY</span>
                         </div>
                     </div>
+
                 </div>
 
+                <!-- Scroll down indicator -->
+                <div class="text-center mt-24 lg:mt-16 scroll-bounce">
+                    <a href="#projects"
+                        class="inline-flex flex-col items-center gap-1 text-zinc-600 hover:text-limeNeo-400 transition-colors">
+                        <span class="text-xs font-mono tracking-widest uppercase">Scroll</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </a>
+                </div>
             </div>
-
-            <!-- Scroll down indicator -->
-            <div class="text-center mt-24 lg:mt-16 scroll-bounce">
-                <a href="#projects"
-                    class="inline-flex flex-col items-center gap-1 text-zinc-600 hover:text-limeNeo-400 transition-colors">
-                    <span class="text-xs font-mono tracking-widest uppercase">Scroll</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </a>
-            </div>
-        </div>
     </section>
 
     <!-- ============================================================
@@ -534,7 +532,6 @@
 
     <!-- ============================================================
          SECTION: About Me
-         PURPOSE: Bio, tech stack, and skill proficiency bars.
     ============================================================ -->
     <section id="about" class="py-28 relative border-t border-zinc-900/50 overflow-hidden">
 
@@ -671,12 +668,7 @@
         </div>
     </section>
 
-    <!-- ============================================================
-         SECTION: Contact
-         PURPOSE: Let visitors reach out via email form.
-         BACKEND: Uses FormSubmit.co AJAX — no server required.
-         DEBUGGING: Check email is activated at formsubmit.co first time.
-    ============================================================ -->
+    <!-- CONTENT -->
     <section id="contact" class="py-28 bg-zinc-950 border-t border-zinc-900/50 relative overflow-hidden">
 
         <div
@@ -722,8 +714,8 @@
                         </div>
                         <div>
                             <span class="text-xs text-zinc-500 uppercase tracking-wider block font-mono">Email</span>
-                            <a href="mailto:kimbryanlegada@gmail.com"
-                                class="text-sm font-semibold text-white hover:text-limeNeo-400 transition-colors break-all">kimbryanlegada@gmail.com</a>
+                            <a href="mailto:legadakimbryan@gmail.com"
+                                class="text-sm font-semibold text-white hover:text-limeNeo-400 transition-colors break-all">legadakimbryan@gmail.com</a>
                         </div>
                     </div>
 
@@ -923,7 +915,7 @@
                 `;
 
                 // POST to FormSubmit.co — sends email to kimbryanlegada@gmail.com
-                fetch("https://formsubmit.co/ajax/kimbryanlegada@gmail.com", {
+                fetch("https://formsubmit.co/ajax/legadakimbryan@gmail.com", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
